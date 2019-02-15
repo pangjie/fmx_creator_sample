@@ -1,0 +1,205 @@
+/* line 3, ../sass/app.scss */
+div {
+  outline: none;
+}
+
+/* line 7, ../sass/app.scss */
+.welcome_block {
+  background: linear-gradient(-45deg, #4d4d4d, #000000);
+  color: white;
+  padding-top: 70px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+/* line 12, ../sass/app.scss */
+.welcome_block .welcome_btn {
+  color: white;
+  font-weight: bold;
+}
+
+/* line 21, ../sass/app.scss */
+.welcome_block_up {
+  background: linear-gradient(45deg, #000000, #353535);
+  color: white;
+  padding-top: 12px;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-bottom: 12px;
+}
+/* line 27, ../sass/app.scss */
+.welcome_block_up .welcome_btn {
+  color: white;
+  font-weight: bold;
+}
+
+/* line 38, ../sass/app.scss */
+.welcome_btn {
+  color: white;
+  font-weight: bold;
+}
+
+/* line 43, ../sass/app.scss */
+.title_logo {
+  width: 100px;
+}
+
+/* line 46, ../sass/app.scss */
+.infi_logo {
+  max-width: 100%;
+}
+
+/* line 50, ../sass/app.scss */
+.title_bar_container {
+  width: 1200px;
+}
+
+/* line 56, ../sass/app.scss */
+.welcome_info_container {
+  width: 1200px;
+  margin-bottom: 100px;
+}
+/* line 60, ../sass/app.scss */
+.welcome_info_container .slogen {
+  font-size: 1.5em;
+}
+
+/* line 65, ../sass/app.scss */
+.nav_bar {
+  padding: 12px;
+  background: linear-gradient(to top left, #4d4d4d, #000000);
+}
+/* line 68, ../sass/app.scss */
+.nav_bar .welcome_btn {
+  color: white;
+  font-weight: bold;
+}
+
+/* line 75, ../sass/app.scss */
+i {
+  outline: none;
+  cursor: pointer;
+}
+
+/* line 80, ../sass/app.scss */
+.btn_save {
+  width: 200px;
+  height: 50px;
+}
+
+/* line 85, ../sass/app.scss */
+.errors {
+  margin-top: 7px;
+  margin-left: 2px;
+  font-size: 12px;
+  line-height: 14px;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+  color: green;
+}
+
+/* line 94, ../sass/app.scss */
+.btn_remove {
+  margin-top: 25px;
+  color: #CC0000;
+}
+
+/* line 99, ../sass/app.scss */
+.btn_add {
+  margin-top: 18px;
+  margin-left: 5px;
+  color: #00cc00;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+}
+
+/* line 115, ../sass/app.scss */
+img {
+  width: 100%;
+}
+
+/* line 119, ../sass/app.scss */
+.user_classification {
+  width: 100%;
+  min-height: 600px;
+}
+/* line 122, ../sass/app.scss */
+.user_classification .md-button {
+  width: 40%;
+}
+
+/* line 128, ../sass/app.scss */
+.intro .intro_logo {
+  width: 20%;
+  margin-top: 50px;
+}
+/* line 132, ../sass/app.scss */
+.intro h1 {
+  color: #006c77;
+}
+/* line 135, ../sass/app.scss */
+.intro .desc {
+  width: 960px;
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+/* line 144, ../sass/app.scss */
+.news .news_logo {
+  width: 20%;
+  margin-top: 50px;
+}
+/* line 148, ../sass/app.scss */
+.news h1 {
+  color: #006c77;
+}
+/* line 151, ../sass/app.scss */
+.news md-card {
+  margin-bottom: 23px;
+  max-width: 960px;
+  margin-right: 23px;
+  margin-left: 23px;
+}
+
+/* line 161, ../sass/app.scss */
+.cases .cases_logo {
+  width: 20%;
+  margin-top: 50px;
+}
+/* line 165, ../sass/app.scss */
+.cases h1 {
+  color: #006c77;
+}
+/* line 168, ../sass/app.scss */
+.cases md-card {
+  margin-bottom: 50px;
+  margin-right: 23px;
+  margin-left: 23px;
+}
+
+/* line 180, ../sass/app.scss */
+.footer {
+  background: #ebebeb;
+  text-align: center;
+}
+
+/* line 184, ../sass/app.scss */
+.copyright {
+  text-align: center;
+  color: gray;
+}
+
+/* line 190, ../sass/app.scss */
+.gridListdemoBasicUsage md-grid-list {
+  margin: 8px;
+}
+
+/* line 195, ../sass/app.scss */
+.gridListdemoBasicUsage .black {
+  background: #000000;
+}
+
+/* line 199, ../sass/app.scss */
+.gridListdemoBasicUsage md-grid-tile {
+  transition: all 400ms ease-out 50ms;
+}

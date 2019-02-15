@@ -1,0 +1,202 @@
+@import "compass";
+
+div {
+    outline: none;
+}
+
+.welcome_block {
+    // background: linear-gradient(to top left, #4d4d4d, black);
+    background: linear-gradient(-45deg, #4d4d4d, black);
+    // background: radial-gradient(#4d4d4d, black);
+    color: white;
+    .welcome_btn {
+        color: white;
+        font-weight: bold;
+    }
+    // min-height: 500px;
+    padding-top: 70px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+.welcome_block_up {
+    // background: black;
+    background: linear-gradient(45deg, black, #353535);
+
+    // background: linear-gradient(45deg, #393939, black);
+    color: white;
+    .welcome_btn {
+        color: white;
+        font-weight: bold;
+    }
+    // min-height: 500px;
+    padding-top: 12px;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 12px;
+}
+
+.welcome_btn {
+        color: white;
+        font-weight: bold;
+    }
+
+.title_logo {
+    width: 100px;
+}
+.infi_logo {
+    max-width: 100%;
+}
+
+.title_bar_container {
+    width: 1200px;
+    // width: 100%;
+    // margin-bottom: 100px;
+}
+
+.welcome_info_container {
+    width: 1200px;
+    // margin-top: 100px;
+    margin-bottom: 100px;
+    .slogen {
+        font-size: 1.5em;
+    }
+}
+
+.nav_bar {
+    padding: 12px;
+    background: linear-gradient(to top left, #4d4d4d, black);
+    .welcome_btn {
+        color: white;
+        font-weight: bold;
+    }
+}
+
+
+i {
+    outline: none;
+    cursor: pointer;
+}
+
+.btn_save {
+    width: 200px;
+    height: 50px;
+}
+
+.errors {
+    margin-top: 7px;
+    margin-left: 2px;
+    font-size: 12px;
+    line-height: 14px;
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+    color: green;
+}
+
+.btn_remove {
+    margin-top: 25px;
+    color: #CC0000;
+}
+
+.btn_add {
+    margin-top: 18px;
+    margin-left: 5px;
+    color: #00cc00;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+}
+
+.main_container {
+}
+
+.project_status {
+    // text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+.user_classification {
+    width: 100%;
+    min-height: 600px;
+    .md-button {
+        width: 40%;
+    }
+}
+
+.intro {
+    .intro_logo {
+        width: 20%;
+        margin-top: 50px;
+    }
+    h1 {
+        color: #006c77;
+    }
+    .desc {
+        width: 960px;
+        text-align: center;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+.news {
+    .news_logo {
+        width: 20%;
+        margin-top: 50px;
+    }
+    h1 {
+        color: #006c77;
+    }
+    md-card {
+        margin-bottom: 23px;
+        max-width: 960px;
+        margin-right: 23px;
+        margin-left: 23px;
+    }
+}
+
+
+.cases {
+    .cases_logo {
+        width: 20%;
+        margin-top: 50px;
+    }
+    h1 {
+        color: #006c77;
+    }
+    md-card {
+        // padding: 12px;
+        margin-bottom: 50px;
+        margin-right: 23px;
+        margin-left: 23px;
+    }
+}
+
+.welcome_show_card {
+    // height: 300px;
+}
+
+.footer {
+    background: #ebebeb;
+    text-align: center;
+}
+.copyright {
+    text-align: center;
+    color: gray;
+}
+
+
+.gridListdemoBasicUsage md-grid-list {
+    margin: 8px;
+}
+
+
+.gridListdemoBasicUsage .black {
+  background: #000000; }
+
+
+.gridListdemoBasicUsage md-grid-tile {
+  transition: all 400ms ease-out 50ms; }
+
+

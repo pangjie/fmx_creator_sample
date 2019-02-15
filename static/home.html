@@ -1,0 +1,562 @@
+
+<div ng-if="isAuthenticated"  layout="column">
+
+  <div ng-if="'' != vm.user.user_type">
+    <div ng-cloak="">
+      <md-content>
+        <md-tabs md-dynamic-height="" md-border-bottom="" md-selected="vm.selectedIndex">
+          
+        <!-- Darshboard   -->
+          <md-tab label="Dashboard" >
+              <md-content class="md-padding">
+                  <div ng-cloak="">
+                      <md-content layout-padding="">
+                        <!-- Creator Section -->
+                          <div layout="column" ng-if="'creator' == vm.user.user_type">
+
+                              <div><h2 class="md-title">Project Status</h2>
+                                  <div class="project_status" layout="row" layout-align="space-between center">
+                                      <div flex="20">
+                                          <p>Actived Project</p>
+                                          <h1>0</h1>
+                                      </div>
+
+                                      <div flex="20">
+                                          <p>Recommond Project</p>
+                                          <h1>0</h1>
+                                      </div>
+
+                                      <div flex="20">
+                                          <p>Completed Project</p>
+                                          <h1>0</h1>
+                                      </div>
+
+                                      <div flex="20">
+                                          <p>Closed Project</p>
+                                          <h1>0</h1>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div><h2 class="md-title">Achievement</h2>
+                                  <div layout="row" layout-align="space-between center">
+                                      <div flex="15">
+                                          <img src="static/img/infi_logo.png" alt="">
+                                      </div>
+                                      <div flex="15">
+                                          <img src="static/img/infi_logo.png" alt="">
+                                      </div>
+                                      <div flex="15">
+                                          <img src="static/img/infi_logo.png" alt="">
+                                      </div>
+                                      <div flex="15">
+                                          <img src="static/img/infi_logo.png" alt="">
+                                      </div>
+                                      <div flex="15">
+                                          <img src="static/img/infi_logo.png" alt="">
+                                      </div>
+                                      
+                                  </div>
+                              </div>
+                              
+                              <div><h2 class="md-title">Project Recommand</h2>
+                                  <div layout="row" layout-align="center center">
+
+                                  </div>
+                              </div>
+                          </div>
+                        <!-- /Creator Section -->
+
+                        <!-- Poster Section -->
+                          <div layout="column" ng-if="'poster' == vm.user.user_type">
+                            <md-button data-ng-click="vm.ttest()">TEST</md-button>
+                          </div>
+                        <!-- /Poster Section -->
+                      </md-content>
+                  </div>
+              </md-content>
+          </md-tab>
+        <!-- /Dashboard -->
+
+        <!-- Workshop -->
+          <md-tab label="Workshop">
+              <md-content class="md-padding">
+                  <div ng-cloak="" class="dashboard">
+                      <md-content layout-padding="">
+                        <!-- Creator Section -->
+                          <div layout="column" ng-if="'creator' == vm.user.user_type">
+
+                              <div><h2 class="md-title">Current Status</h2>
+                                  <div class="project_status" layout="row" layout-align="space-between center">
+
+                                  </div>
+                              </div>
+
+                              <div><h2 class="md-title">Version Submit</h2>
+                                  <div layout="row" layout-align="space-between center">
+
+                                      
+                                  </div>
+                              </div>
+                              
+                              <div><h2 class="md-title">Previous Submition</h2>
+                                  <div layout="row" layout-align="center center">
+
+                                  </div>
+                              </div>
+                          </div>  
+                        <!-- /Creator Section -->
+
+                        <!-- Poster Section -->
+                          <div layout="column" ng-if="'poster' == vm.user.user_type">
+                            <form name="projectForm" novalidate ng-submit="projectForm.$valid && vm.post_project()">
+                              <h2>Post a New Project</h2>
+                              <br />
+                              <br />
+                              <div layout-gt-xs="row">
+                                <md-input-container class="md-block" flex-gt-xs="">
+                                  <label>Project Name</label>
+                                  <input md-maxlength="1000" required="" name="project_name" ng-model="vm.project.name">
+                                  <div ng-messages="projectForm.name.$error">
+                                    <div ng-message="required">Name is required.</div>
+                                    <div ng-message="md-maxlength">The name has to be less than 1000 characters long.</div>
+                                  </div>
+                                </md-input-container>
+                                <div flex="5" hide-xs="" hide-xs=""></div>
+                                <md-input-container class="md-block">
+                                  <label>Budget (USD)</label>
+                                  <input required="" type="number" step="any" name="budget" ng-model="vm.project.budget" min="1">
+                                  <div ng-messages="projectForm.budget.$error" multiple="" md-auto-hide="false">
+                                    <div ng-message="min">
+                                      You should charge at least $1.
+                                    </div>
+                                  </div>
+                                </md-input-container>
+                              </div>
+                              <md-input-container class="md-block">
+                                <label>Description</label>
+                                <textarea ng-model="vm.project.description" required="" md-maxlength="15000" rows="3" md-select-on-focus=""></textarea>
+                                <div ng-messages="projectForm.description.$error">
+                                  <div ng-message="required">Description is required.</div>
+                                  <div ng-message="md-maxlength">The Description has to be less than 15000 characters long.</div>
+                                </div>
+                              </md-input-container>
+                              <div layout="column" layout-align="center center">
+                                <md-button class="md-raised md-primary btn_save" type="submit">SAVE</md-button>
+                              </div>
+                            </form>
+                            <br />
+                            <br />
+                            <br />
+                            <div>
+                              <h2 class="md-title"></h2>
+                              <div class="project_status">
+                                </md-toolbar>
+                                <h2>Project List</h2>
+                                <md-content>
+                                  <md-list>
+                                    <md-list-item class="md-3-line" ng-repeat="item in vm.project_list">
+                                      <img ng-src="static/img/logo.png" class="md-avatar" alt="{{item.who}}">
+                                      <div class="md-list-item-text">
+                                        <h3>{{item.name}} - {{item.status}} - {{item.create_time}}</h3>
+                                        <h3>{{item.name}} - {{item.status}} - {{item.create_time}}</h3>
+                                        <h4>{{item.budget}} - </h4>
+                                      </div>
+                                      <md-button class="md-secondary">Respond</md-button>
+                                      <md-button class="md-secondary">Respond</md-button>
+                                      <md-divider ng-if="!$last"></md-divider>
+                                    </md-list-item>
+                                  </md-list>
+                                </md-content>
+                              </div>
+                            </div>
+                          </div>
+                        <!-- /Poster Section -->
+                      </md-content>
+                  </div>
+              </md-content>
+          </md-tab>
+        <!-- /Workshop -->
+
+        <!-- Profile -->
+          <md-tab label="Profile">
+            <md-content class="md-padding">
+              <div ng-cloak="">
+                <md-content layout-padding="">
+                  <form name="userForm" novalidate ng-submit="userForm.$valid && vm.save()">
+                    
+                  <!-- Contact Information -->
+                    <h2 class="md-title">Contact Information</h2>
+                    <div layout-gt-xs="row">
+                      <md-input-container class="md-block" flex-gt-xs="">
+                        <label>First Name</label>
+                        <input md-maxlength="30" required="" name="given_name" ng-model="vm.user.given_name">
+                        <div ng-messages="userForm.given_name.$error">
+                          <div ng-message="required">Name is required.</div>
+                          <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+                        </div>
+                      </md-input-container>
+
+                      <div flex="5" hide-xs="" hide-xs=""></div>
+
+                      <md-input-container class="md-block" flex-gt-xs="">
+                        <label>Last Name</label>
+                        <input md-maxlength="30" required="" name="family_name" ng-model="vm.user.family_name">
+                        <div ng-messages="userForm.family_name.$error">
+                          <div ng-message="required">Name is required.</div>
+                          <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+                        </div>
+                      </md-input-container>
+                    </div>
+
+                    <div layout-gt-xs="row">
+                      <md-input-container class="md-block" flex-gt-xs="">
+                        <label>Email</label>
+                        <input name="email" ng-model="vm.user.email" required="" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/"  >
+                        <div ng-messages="userForm.email.$error">
+                          <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                            Your email must be between 10 and 64 characters long and look like an e-mail address.
+                          </div>
+                        </div>
+                      </md-input-container>
+                      
+                      <div flex="5" hide-xs="" hide-xs=""></div>
+
+                      <md-input-container class="md-block" flex-gt-xs="">
+                        <label>Phone Number</label>
+                        <input name="phone" ng-model="vm.user.phone" ng-pattern="/^[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}$/">
+                        <div ng-messages="userForm.phone.$error" ng-hide="showHints">
+                          <div ng-message="pattern">(###) ###-#### - Please enter a valid phone number.</div>
+                        </div>
+                      </md-input-container>
+                    </div>
+                    
+                    <md-input-container class="md-block" flex-gt-xs="">
+                      <label>Address</label>
+                      <input name="address" ng-model="vm.user.address" minlength="5" maxlength="256" >
+                    </md-input-container>
+
+                    <div layout-gt-xs="row">
+                      <md-input-container class="md-block" flex-gt-xs="">
+                        <label>City</label>
+                        <input name="city" ng-model="vm.user.city" minlength="2", maxlength="32">
+                      </md-input-container>
+
+                      <div flex="5" hide-xs="" hide-xs=""></div>
+
+                      <md-input-container class="md-block" flex-gt-xs="">
+                        <label>State</label>
+                        <md-select name="state" ng-model="vm.user.state">
+                          <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
+                            {{state.abbrev}}
+                          </md-option>
+                        </md-select>
+                      </md-input-container>
+
+                      <div flex="5" hide-xs="" hide-xs=""></div>
+
+                      <md-input-container class="md-block" flex-gt-xs="">
+                        <label>Zip Code</label>
+                        <input name="zipcode" ng-model="vm.user.zipcode" ng-pattern="/^[0-9]{5}$/">
+                      </md-input-container>                        
+                    </div>
+                  <!-- /Contact Information -->
+
+                  <!-- Creator Information -->
+                    <div ng-if="'creator' == vm.user.user_type">
+                      <div layout-gt-xs="row">
+                        <md-input-container class="md-block" flex-gt-xs="">
+                          <label>Linkedin: URL</label>
+                          <input type="url" name="linkedin" ng-model="vm.user.linkedin" minlength="10">
+                        </md-input-container>
+
+                        <div flex="5" hide-xs="" hide-xs=""></div>
+
+                        <md-input-container class="md-block" flex-gt-xs="">
+                          <label>Personal Website: URL</label>
+                          <input type="url" name="website" ng-model="vm.user.website">
+                        </md-input-container>
+                      </div>
+
+                      <h2 class="md-title">Roles</h2>
+                      <div layout="row" layout-wrap="" style="padding-left: 10%;">
+                        <div flex="90" flex-gt-xs="40" flex-gt-sm="30" flex-gt-md="20" ng-repeat="item in vm.items">
+                          <md-checkbox ng-checked="vm.exists(item, vm.selected)" ng-click="vm.toggle(item, vm.selected)">
+                            {{ item }} 
+                          </md-checkbox>
+                        </div>
+                      </div>
+                      <br />
+                      <h2 class="md-title">Skills</h2>
+                      <md-chips name="skill" ng-model="vm.skill" md-separator-keys="keys" placeholder="Enter Your Top10 Skills" secondary-placeholder="Comma separated skill" md-max-chips="10"></md-chips>
+                      <div class="errors" ng-messages="userForm.skill.$error">
+                        <div ng-message="md-max-chips">The maxmium of chips is 10.</div>
+                      </div>
+                      <br />
+                      <br />
+                      <div layout="row">
+                        <h2 class="md-title">Works</h2><div class="btn_add"><i class="material-icons" data-ng-click="vm.add_work()">add_circle</i></div>
+                      </div>
+                      <div data-ng-repeat="work in vm.works">
+                        <div layout="row">
+                          <div class="btn_remove"><i class="material-icons" data-ng-click="vm.remove_work($index)">remove_circle</i></div>
+                          <md-input-container class="md-block" flex>
+                            <label>URL {{$index + 1}}</label>
+                            <input type="url" name="work" ng-model="work.url"> 
+                          </md-input-container>
+                        </div>
+                      </div>
+                    </div>
+                  <!-- /Creator Information -->
+
+                  <!-- Poster Infomation -->
+                    <div ng-if="'poster' == vm.user.user_type">
+                      <h2 class="md-title">Experts You need</h2>
+                      <div layout="row" layout-wrap="" style="padding-left: 10%;">
+                        <div flex="90" flex-gt-xs="40" flex-gt-sm="30" flex-gt-md="20" ng-repeat="item in vm.items">
+                          <md-checkbox ng-checked="vm.exists(item, vm.selected)" ng-click="vm.toggle(item, vm.selected)">
+                            {{ item }} 
+                          </md-checkbox>
+                        </div>
+                      </div>
+                      <br />
+                      <br />
+                    </div>
+                  <!-- /Poster Information -->
+
+                    <div layout="row" layout-align="center center">
+                        <md-button class="md-raised md-primary btn_save" type="submit">SAVE</md-button>
+                    </div>
+                  </form>
+                </md-content>
+              </div>
+            </md-content>
+          </md-tab>
+        <!-- /Profile -->
+
+        <!-- Project History -->
+          <md-tab label="Project History">
+              <md-content class="md-padding">
+                <div ng-cloak="">
+                  <md-content layout-padding="">
+                  <!-- Creator Section -->
+                    <div layout="column" ng-if="'creator' == vm.user.user_type">
+                      <md-card>
+                        <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+                        <md-card-title>
+                          <md-card-title-text>
+                            <span class="md-headline">Action buttons</span>
+                          </md-card-title-text>
+                        </md-card-title>
+                        <md-card-content>
+                          <p>
+                            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                          </p>
+                          <p>
+                            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                          </p>
+                          <p>
+                            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                          </p>
+                        </md-card-content>
+                        <md-card-actions layout="row" layout-align="end center">
+                          <md-button>Action 1</md-button>
+                          <md-button>Action 2</md-button>
+                        </md-card-actions>
+                      </md-card>
+                      <md-card>
+                        <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+                        <md-card-title>
+                          <md-card-title-text>
+                            <span class="md-headline">Action buttons</span>
+                          </md-card-title-text>
+                        </md-card-title>
+                        <md-card-content>
+                          <p>
+                            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                          </p>
+                          <p>
+                            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                          </p>
+                          <p>
+                            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                          </p>
+                        </md-card-content>
+                        <md-card-actions layout="row" layout-align="end center">
+                          <md-button>Action 1</md-button>
+                          <md-button>Action 2</md-button>
+                        </md-card-actions>
+                      </md-card>
+                      <md-card>
+                        <img ng-src="static/img/beijing.jpg" class="md-card-image" alt="Washed Out">
+                        <md-card-title>
+                          <md-card-title-text>
+                            <span class="md-headline">Action buttons</span>
+                          </md-card-title-text>
+                        </md-card-title>
+                        <md-card-content>
+                          <p>
+                            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                          </p>
+                          <p>
+                            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                          </p>
+                          <p>
+                            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                          </p>
+                        </md-card-content>
+                        <md-card-actions layout="row" layout-align="end center">
+                          <md-button>Action 1</md-button>
+                          <md-button>Action 2</md-button>
+                        </md-card-actions>
+                      </md-card> 
+                    </div>
+                  <!-- Creator Section -->
+
+                  <!-- Poster Section -->
+                    <div layout="column" ng-if="'poster' == vm.user.user_type">
+                      
+                    </div>
+                  <!-- /Poster Section -->
+                  </md-content>
+                </div>
+              </md-content>
+          </md-tab>
+        <!-- /Project History -->
+
+        </md-tabs>
+      </md-content>
+    </div>
+  </div>
+
+  <div ng-if="'' == vm.user.user_type">
+    <div class="user_classification" layout="row" layout-align="center center">
+      <md-button class="md-raised md-primary " data-ng-click="vm.user_classification('creator')">Work</md-button>
+      <md-button class="md-raised md-warn" data-ng-click="vm.user_classification('poster')">Hire</md-button>
+    </div>
+  </div>
+
+</div>
+
+<div ng-if="!isAuthenticated">
+  <div class="welcome_block" layout="column" layout-align="space-between center">
+
+    <div class="welcome_info_container" layout="row" layout-align="space-between center">
+      
+      <div class="slogen" flex="50">
+        <h1>Hire professionals for your VR projects</h1>
+        <h5>Many companies use FMX ultimate platform to turn their creative idea into an immercive dream VR world</h5>
+      </div>
+
+      <div flex="50">
+        <img class="infi_logo" src="static/img/infi_logo.png" alt="">
+      </div>
+    </div>
+
+    <div>
+      <h5>Are you a VR talented and looking for a work? <a data-ng-click="authService.signup()"><i><u>Signin our profession base</u></i></a></h5>
+    </div>
+  </div>
+  <br \>
+  <br \>
+  <br \> 
+  <div class="intro" layout="column" layout-align="center center">
+
+    <div>
+      <h1>FMX New Media</h1>
+    </div>
+    <div class="desc">
+      <p>
+        FMX New Media was founded by a group of VR3D film makers and VR professional who have over 25 years combined experience in immersive VR production projects. They share the goal of bringing  an immersive VR experience to the market through the FMX Ultimate Platform©. We connect VR experts with people who wish to turn their dream into a magical VR experience, in short we help VR professional to share their talents and creativities with the world. Our database includes Hollywood 3D filmmakers along, VR production, post production professionals, VR cinema photographers, Directors, Scriptwriters, Computer Engineers, Gaming programmers, 2D/3D animation designers and 3D sound engineers. 
+      <br />
+      <br />
+        Using the FMX Ultimate Platform we have produced and supported many well known segments of the industry such as CICC TV, The China travel bureau, Local TV Stations in the Sates, Real Estate companies, Hotels and more.  
+      <br />
+      <br />
+        FMX New Media is proud announce that it has established a VR/AR laboratory in cooperation with Dell, CICC TV, and The International VR Society along with CICCTV in Beijing China. 
+      </p>
+    </div>
+    <br/>
+    <br/>
+    <div>
+      <h4>Strategy Partners</h1>
+    </div>
+    <div layout="row" layout-align="space-around center">
+      <div><img src="static/img/logo_1_sq.png" alt=""></div>
+      <div><img src="static/img/logo_2_sq.png" alt=""></div>
+    </div>
+  </div>
+  <br \> 
+  <br \> 
+  <br \> 
+
+  <div class="welcome_show">
+    <div ng-cloak="" class="gridListdemoBasicUsage">
+      <md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="2:2" md-gutter="12px" md-gutter-gt-sm="8px">
+
+        <md-grid-tile md-rowspan="1" md-colspan="2" md-colspan-sm="2" md-colspan-xs="2">
+          <img ng-src="static/img/news1.jpg" class="md-card-image" alt="Washed Out">
+          <md-grid-tile-footer>
+            <h3>The opening ceremony of the " future VR/AR laborory " in CICC TV at Beijing, the labortory was co- found by FMX, CICC TV, AIS VRE and Dell.</h3>
+          </md-grid-tile-footer>
+        </md-grid-tile>
+
+        <md-grid-tile class="black" md-rowspan="2" md-colspan="2" md-colspan-sm="2" md-colspan-xs="2">
+          <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/uWNDe4KtDyk?rel=0" frameborder="0" allowfullscreen></iframe></iframe>
+          <md-grid-tile-footer>
+            <h3>FMX VR production team was shooting " The beautiful China searies - Gui Ling " in Guilin, China</h3>
+          </md-grid-tile-footer>
+        </md-grid-tile>
+
+        <md-grid-tile md-rowspan="1" md-colspan="2" md-colspan-sm="2" md-colspan-xs="2">
+          <img ng-src="static/img/news4.jpg" class="md-card-image" alt="Washed Out">
+          <md-grid-tile-footer>
+            <h3>The co-funder of FMX new media Sarah Xu interviewed the IOC member Keino from Kenya during the summ Olympic in Rio in Aug 2016.</h3>
+          </md-grid-tile-footer>
+        </md-grid-tile>
+        <md-grid-tile md-rowspan="1" md-colspan="2" md-colspan-sm="2" md-colspan-xs="2">
+          <img ng-src="static/img/news5.jpg" class="md-card-image" alt="Washed Out">
+          <md-grid-tile-footer>
+            <h3>The co-funder of FMX new media Sarah Xu interviewed the ground daughter of Simonetta Puccini in Milan Italiy in June 2016</h3>
+          </md-grid-tile-footer>
+        </md-grid-tile>
+        
+        <md-grid-tile md-rowspan="1" md-colspan="2" md-colspan-sm="2" md-colspan-xs="2">
+          <img ng-src="static/img/news2.jpg" class="md-card-image" alt="Washed Out">
+          <md-grid-tile-footer>
+            <h3>The co-funder of FMX new media Sarah Xu interviewed  the IOC member Irena Szewinska from Poland during the summ Olympic in Rio in Aug 2016</h3>
+          </md-grid-tile-footer>
+        </md-grid-tile>
+      </md-grid-list>
+    </div>
+  </div>
+  <br \>
+  <br \>
+  <br \>
+</div>
+<div class="footer" layout="column">
+<!--   <div layout-gt-xs="row" layout-align="center center">
+    <div flex-gt-xs="20">
+      <h4>FAQs</h4>
+    </div>
+    <div flex-gt-xs="20">
+      <h4>Help & Tutorials</h4>
+    </div>
+    <div flex-gt-xs="20">
+      <h4>Contact info@fmxnvr.com</h4>
+    </div>
+  </div> -->
+  <div class="copyright">
+    <h6>CopyRight @ FMXNVR.COM FMX NEW MEDIA INC.</h6>
+  </div>
+</div>
+

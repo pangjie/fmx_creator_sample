@@ -1,0 +1,3 @@
+var AUTH0_CLIENT_ID='dHCeAvImpUyvxssQpYZCG86OyZSJlXhH'; 
+var AUTH0_DOMAIN='jiepang.auth0.com'; 
+var AUTH0_CALLBACK_URL='YOUR_CALLBACK_URL';

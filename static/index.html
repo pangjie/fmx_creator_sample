@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>FMX Creator</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="google-site-verification" content="CYQS-0ClPMYGTLR2CG4Kfm3mx8GHePIIp7tvUgor6Mk"/>
+  <base href="/home"></base>
+  <script type="text/javascript" src="static/bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="static/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script type="text/javascript" src="static/bower_components/auth0-lock/build/lock.js"></script>
+  <script type="text/javascript" src="static/bower_components/angular-lock/dist/angular-lock.js"></script>
+  <script type="text/javascript" src="static/bower_components/angular-jwt/dist/angular-jwt.js"></script>
+  <script type="text/javascript" src="static/bower_components/angular-md5/angular-md5.min.js"></script>
+
+  <script type="text/javascript" src="static/bower_components/angular-animate/angular-animate.js"></script>
+  <script type="text/javascript" src="static/bower_components/angular-aria/angular-aria.js"></script>
+  <script type="text/javascript" src="static/bower_components/angular-material/angular-material.js"></script>
+  <script type="text/javascript" src="static/bower_components/angular-messages/angular-messages.js"></script>
+  <script type="text/javascript" src="static/bower_components/svg-assets-cache.js/svg-assets-cache.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="static/bower_components/angular-material/angular-material.css">
+  <link rel="stylesheet" type="text/css" href="static/stylesheets/app.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <script type="text/javascript" src="static/js/app.js"></script>
+  <script type="text/javascript" src="static/js/controllers.js"></script>
+  <script type="text/javascript" src="static/js/services.js"></script>
+  <script type="text/javascript" src="static/js/auth0-variables.js"></script>
+
+</head>
+<body>
+  <div ng-if="!isAuthenticated" class="welcome_block_up" layout="column" layout-align="space-between center">
+    
+    <div class="title_bar_container" layout="row" layout-align="space-between center">
+      <div layout="row" layout-align="space-between center">
+        <a ui-sref="home"><img class="title_logo" src="static/img/logo.png" alt="FMX New Media"></a>
+        <md-menu>
+          <md-button class="md-primary welcome_btn" ng-click="$mdOpenMenu()">About</md-button>
+          <md-menu-content>
+            <md-menu-item><md-button ui-sref="intro"="">Introduction</md-button></md-menu-item>
+            <md-menu-item><md-button ui-sref="news">News</md-button></md-menu-item>
+            <md-menu-item><md-button ui-sref="cases">Cases</md-button></md-menu-item>
+            <md-menu-item><md-button ng-disabled="true" ng-click="">Event (Comming Soon)</md-button></md-menu-item>
+            <md-menu-item><md-button ng-disabled="true" ng-click="">Training (Comming Soon)</md-button></md-menu-item>
+          </md-menu-content>
+        </md-menu>         
+      </div>
+
+      <div>
+        <md-button class="md-primary welcome_btn"  data-ng-click="authService.login()">Log in</md-button>
+        <md-button class="md-primary welcome_btn"  data-ng-click="authService.signup()">Sign up</md-button>
+        <md-button class="md-accent"  data-ng-click="authService.login()">Become Expert</md-button>
+        <md-button class="md-raised md-warn welcome_btn" data-ng-click="authService.login()">Post a Project</md-button>
+      </div>
+    </div>
+  </div>
+
+  <div ng-if="isAuthenticated" class="nav_bar" layout="row" layout-align="space-between center">
+    
+    <div layout="row" layout-align="space-between center">
+      <a ui-sref="home"><img class="title_logo" src="static/img/logo.png" alt="FMX New Media"></a>
+      <md-menu>
+        <md-button class="md-primary welcome_btn" ng-click="$mdOpenMenu()">About</md-button>
+        <md-menu-content>
+          <md-menu-item><md-button ui-sref="intro">Introduction</md-button></md-menu-item>
+          <md-menu-item><md-button ui-sref="news">News</md-button></md-menu-item>
+          <md-menu-item><md-button ui-sref="cases">Cases</md-button></md-menu-item>
+          <md-menu-item><md-button ng-disabled="true" ng-click="">Event (Comming Soon)</md-button></md-menu-item>
+          <md-menu-item><md-button ng-disabled="true" ng-click="">Training (Comming Soon)</md-button></md-menu-item>
+        </md-menu-content>
+      </md-menu>         
+    </div>
+
+    <div>
+      <md-button class="md-primary welcome_btn"  data-ng-click="authService.logout()">Log out</md-button>
+      <md-button class="md-raised md-warn welcome_btn" data-ng-click="authService.login()">Post a Project</md-button>
+    </div>
+
+  </div>
+
+  <div ui-view class="main_container"></div>
+    
+    
+</body>
+</html>

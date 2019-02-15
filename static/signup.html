@@ -1,0 +1,596 @@
+ {{vm.user.user_type}}
+ {{vm.selectedIndex}}
+ {{vm.tester}}
+<div ng-if="isAuthenticated"  layout="column">
+
+  <div ng-if="'' != vm.user.user_type">
+    <div ng-cloak="">
+      <md-content>
+        <md-tabs md-dynamic-height="" md-border-bottom="" md-selected="vm.selectedIndex">
+            
+          <md-tab label="Dashboard" >
+              <md-content class="md-padding">
+                  <div ng-cloak="">
+                      <md-content layout-padding="">
+                          <div layout="column">
+
+                              <div><h2 class="md-title">Project Status</h2>
+                                  <div class="project_status" layout="row" layout-align="space-between center">
+                                      <div flex="20">
+                                          <p>Active Project</p>
+                                          <h1>1</h1>
+                                          <p>Current</p>
+                                      </div>
+
+                                      <div flex="20">
+                                          <p>Profile Review</p>
+                                          <h1>1</h1>
+                                          <p>All Time</p>
+                                      </div>
+
+                                      <div flex="20">
+                                          <p>Recommond Project</p>
+                                          <h1>1</h1>
+                                          <p>Current</p>
+                                      </div>
+
+                                      <div flex="20">
+                                          <p>Closed Project</p>
+                                          <h1>1</h1>
+                                          <p>Alltime</p>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div><h2 class="md-title">Achievement</h2>
+                                  <div layout="row" layout-align="space-between center">
+                                      <div flex="15">
+                                          <img src="static/img/infi_logo.png" alt="">
+                                      </div>
+                                      <div flex="15">
+                                          <img src="static/img/infi_logo.png" alt="">
+                                      </div>
+                                      <div flex="15">
+                                          <img src="static/img/infi_logo.png" alt="">
+                                      </div>
+                                      <div flex="15">
+                                          <img src="static/img/infi_logo.png" alt="">
+                                      </div>
+                                      <div flex="15">
+                                          <img src="static/img/infi_logo.png" alt="">
+                                      </div>
+                                      
+                                  </div>
+                              </div>
+                              
+                              <div><h2 class="md-title">Project Recommand</h2>
+                                  <div layout="row" layout-align="center center">
+                                      <md-card>
+                                              <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+                                              <md-card-title>
+                                                <md-card-title-text>
+                                                  <span class="md-headline">Action buttons</span>
+                                                </md-card-title-text>
+                                              </md-card-title>
+                                              <md-card-content>
+                                                <p>
+                                                  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                                  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                                </p>
+                                                <p>
+                                                  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                                  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                                </p>
+                                                <p>
+                                                  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                                  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                                </p>
+                                              </md-card-content>
+                                              <md-card-actions layout="row" layout-align="end center">
+                                                <md-button>Action 1</md-button>
+                                                <md-button>Action 2</md-button>
+                                              </md-card-actions>
+                                      </md-card>
+
+                                      <md-card>
+                                              <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+                                              <md-card-title>
+                                                <md-card-title-text>
+                                                  <span class="md-headline">Action buttons</span>
+                                                </md-card-title-text>
+                                              </md-card-title>
+                                              <md-card-content>
+                                                <p>
+                                                  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                                  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                                </p>
+                                                <p>
+                                                  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                                  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                                </p>
+                                                <p>
+                                                  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                                  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                                </p>
+                                              </md-card-content>
+                                              <md-card-actions layout="row" layout-align="end center">
+                                                <md-button>Action 1</md-button>
+                                                <md-button>Action 2</md-button>
+                                              </md-card-actions>
+                                      </md-card>
+
+                                      <md-card>
+                                              <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+                                              <md-card-title>
+                                                <md-card-title-text>
+                                                  <span class="md-headline">Action buttons</span>
+                                                </md-card-title-text>
+                                              </md-card-title>
+                                              <md-card-content>
+                                                <p>
+                                                  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                                  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                                </p>
+                                                <p>
+                                                  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                                  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                                </p>
+                                                <p>
+                                                  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                                  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                                </p>
+                                              </md-card-content>
+                                              <md-card-actions layout="row" layout-align="end center">
+                                                <md-button>Action 1</md-button>
+                                                <md-button>Action 2</md-button>
+                                              </md-card-actions>
+                                      </md-card>
+                                  </div>
+                              </div>
+                          </div>
+                      </md-content>
+                  </div>
+              </md-content>
+          </md-tab>
+
+          <md-tab label="Dashboard">
+              <md-content class="md-padding">
+                  <div ng-cloak="">
+                      <md-content layout-padding="">
+                          <div layout="column">
+
+                              <div><h2 class="md-title">Project Status</h2>
+                                  <div class="project_status" layout="row" layout-align="space-between center">
+                                      <div flex="20">
+                                          <p>Active Project</p>
+                                          <h1>1</h1>
+                                          <p>Current</p>
+                                      </div>
+
+                                      <div flex="20">
+                                          <p>Profile Review</p>
+                                          <h1>1</h1>
+                                          <p>All Time</p>
+                                      </div>
+
+                                      <div flex="20">
+                                          <p>Recommond Project</p>
+                                          <h1>1</h1>
+                                          <p>Current</p>
+                                      </div>
+
+                                      <div flex="20">
+                                          <p>Closed Project</p>
+                                          <h1>1</h1>
+                                          <p>Alltime</p>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <div><h2 class="md-title">Achievement</h2>
+                                  <div layout="row" layout-align="space-between center">
+                                      <div flex="15">
+                                          <img src="static/img/infi_logo.png" alt="">
+                                      </div>
+                                      <div flex="15">
+                                          <img src="static/img/infi_logo.png" alt="">
+                                      </div>
+                                      <div flex="15">
+                                          <img src="static/img/infi_logo.png" alt="">
+                                      </div>
+                                      <div flex="15">
+                                          <img src="static/img/infi_logo.png" alt="">
+                                      </div>
+                                      <div flex="15">
+                                          <img src="static/img/infi_logo.png" alt="">
+                                      </div>
+                                      
+                                  </div>
+                              </div>
+                              
+                              <div><h2 class="md-title">Project Recommand</h2>
+                                  <div layout="row" layout-align="center center">
+                                      <md-card>
+                                              <img ng-src="{{vm.imagePath}}" class="md-card-image" alt="Washed Out">
+                                              <md-card-title>
+                                                <md-card-title-text>
+                                                  <span class="md-headline">Action buttons</span>
+                                                </md-card-title-text>
+                                              </md-card-title>
+                                              <md-card-content>
+                                                <p>
+                                                  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                                  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                                </p>
+                                                <p>
+                                                  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                                  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                                </p>
+                                                <p>
+                                                  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                                  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                                </p>
+                                              </md-card-content>
+                                              <md-card-actions layout="row" layout-align="end center">
+                                                <md-button>Action 1</md-button>
+                                                <md-button>Action 2</md-button>
+                                              </md-card-actions>
+                                      </md-card>
+
+                                      <md-card>
+                                              <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+                                              <md-card-title>
+                                                <md-card-title-text>
+                                                  <span class="md-headline">Action buttons</span>
+                                                </md-card-title-text>
+                                              </md-card-title>
+                                              <md-card-content>
+                                                <p>
+                                                  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                                  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                                </p>
+                                                <p>
+                                                  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                                  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                                </p>
+                                                <p>
+                                                  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                                  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                                </p>
+                                              </md-card-content>
+                                              <md-card-actions layout="row" layout-align="end center">
+                                                <md-button>Action 1</md-button>
+                                                <md-button>Action 2</md-button>
+                                              </md-card-actions>
+                                      </md-card>
+
+                                      <md-card>
+                                              <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+                                              <md-card-title>
+                                                <md-card-title-text>
+                                                  <span class="md-headline">Action buttons</span>
+                                                </md-card-title-text>
+                                              </md-card-title>
+                                              <md-card-content>
+                                                <p>
+                                                  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                                  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                                </p>
+                                                <p>
+                                                  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                                  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                                </p>
+                                                <p>
+                                                  The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                                                  two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                                                </p>
+                                              </md-card-content>
+                                              <md-card-actions layout="row" layout-align="end center">
+                                                <md-button>Action 1</md-button>
+                                                <md-button>Action 2</md-button>
+                                              </md-card-actions>
+                                      </md-card>
+                                  </div>
+                              </div>
+                          </div>
+                      </md-content>
+                  </div>
+              </md-content>
+          </md-tab>
+
+          <md-tab label="Workshop">
+              <md-content class="md-padding">
+                  <div ng-cloak="" class="dashboard">
+                      <md-content layout-padding="">
+                          <div layout="column">
+
+                              <div><h2 class="md-title">Project Status</h2>
+                                  <div class="project_status" layout="row" layout-align="space-between center">
+
+                                  </div>
+                              </div>
+
+                              <div><h2 class="md-title">Achievement</h2>
+                                  <div layout="row" layout-align="space-between center">
+
+                                      
+                                  </div>
+                              </div>
+                              
+                              <div><h2 class="md-title">Project Recommand</h2>
+                                  <div layout="row" layout-align="center center">
+
+                                  </div>
+                              </div>
+
+                          </div>
+                          
+                      </md-content>
+                  </div>
+              </md-content>
+          </md-tab>
+
+          <md-tab label="Profile">
+            <md-content class="md-padding">
+              <div ng-cloak="">
+                <md-content layout-padding="">
+                  <form name="userForm" novalidate ng-submit="userForm.$valid && vm.save()">
+                    
+                    <!-- Contact Information -->
+                    <h2 class="md-title">Contact Information</h2>
+                    <div layout-gt-xs="row">
+                      <md-input-container class="md-block" flex-gt-xs="">
+                        <label>First Name</label>
+                        <input md-maxlength="30" required="" name="given_name" ng-model="vm.user.given_name">
+                        <div ng-messages="userForm.given_name.$error">
+                          <div ng-message="required">Name is required.</div>
+                          <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+                        </div>
+                      </md-input-container>
+
+                      <div flex="5" hide-xs="" hide-xs=""></div>
+
+                      <md-input-container class="md-block" flex-gt-xs="">
+                        <label>Last Name</label>
+                        <input md-maxlength="30" required="" name="family_name" ng-model="vm.user.family_name">
+                        <div ng-messages="userForm.family_name.$error">
+                          <div ng-message="required">Name is required.</div>
+                          <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+                        </div>
+                      </md-input-container>
+                    </div>
+
+                    <div layout-gt-xs="row">
+                      <md-input-container class="md-block" flex-gt-xs="">
+                        <label>Email</label>
+                        <input name="email" ng-model="vm.user.email" required="" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/"  >
+                        <div ng-messages="userForm.email.$error">
+                          <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                            Your email must be between 10 and 64 characters long and look like an e-mail address.
+                          </div>
+                        </div>
+                      </md-input-container>
+                      
+                      <div flex="5" hide-xs="" hide-xs=""></div>
+
+                      <md-input-container class="md-block" flex-gt-xs="">
+                        <label>Phone Number</label>
+                        <input name="phone" ng-model="vm.user.phone" ng-pattern="/^[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}$/">
+                        <div ng-messages="userForm.phone.$error" ng-hide="showHints">
+                          <div ng-message="pattern">(###) ###-#### - Please enter a valid phone number.</div>
+                        </div>
+                      </md-input-container>
+                    </div>
+                    
+                    <md-input-container class="md-block" flex-gt-xs="">
+                      <label>Address</label>
+                      <input name="address" ng-model="vm.user.address" minlength="5" maxlength="256" >
+                    </md-input-container>
+
+                    <div layout-gt-xs="row">
+                      <md-input-container class="md-block" flex-gt-xs="">
+                        <label>City</label>
+                        <input name="city" ng-model="vm.user.city" minlength="2", maxlength="32">
+                      </md-input-container>
+
+                      <div flex="5" hide-xs="" hide-xs=""></div>
+
+                      <md-input-container class="md-block" flex-gt-xs="">
+                        <label>State</label>
+                        <md-select name="state" ng-model="vm.user.state">
+                          <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
+                            {{state.abbrev}}
+                          </md-option>
+                        </md-select>
+                      </md-input-container>
+
+                      <div flex="5" hide-xs="" hide-xs=""></div>
+
+                      <md-input-container class="md-block" flex-gt-xs="">
+                        <label>Zip Code</label>
+                        <input name="zipcode" ng-model="vm.user.zipcode" ng-pattern="/^[0-9]{5}$/">
+                      </md-input-container>                        
+                    </div>
+                    <!-- /Contact Information -->
+
+                    <!-- Creator Information -->
+                    <div ng-if="'creator' == vm.user.user_type">
+                      <div layout-gt-xs="row">
+                        <md-input-container class="md-block" flex-gt-xs="">
+                          <label>Linkedin: URL</label>
+                          <input type="url" name="linkedin" ng-model="vm.user.linkedin" minlength="10">
+                        </md-input-container>
+
+                        <div flex="5" hide-xs="" hide-xs=""></div>
+
+                        <md-input-container class="md-block" flex-gt-xs="">
+                          <label>Personal Website: URL</label>
+                          <input type="url" name="website" ng-model="vm.user.website">
+                        </md-input-container>
+                      </div>
+
+                      <h2 class="md-title">Roles</h2>
+                      <div layout="row" layout-wrap="" style="padding-left: 10%;">
+                        <div flex="90" flex-gt-xs="40" flex-gt-sm="30" flex-gt-md="20" ng-repeat="item in vm.items">
+                          <md-checkbox ng-checked="vm.exists(item, selected)" ng-click="vm.toggle(item, selected)">
+                            {{ item }} 
+                          </md-checkbox>
+                        </div>
+                      </div>
+                      <br />
+                      <h2 class="md-title">Skills</h2>
+                      <md-chips name="skill" ng-model="vm.skill" md-separator-keys="keys" placeholder="Enter Your Top10 Skills" secondary-placeholder="Comma separated skills" md-max-chips="10"></md-chips>
+                      <div class="errors" ng-messages="userForm.skill.$error">
+                        <div ng-message="md-max-chips">The maxmium of chips is 10.</div>
+                      </div>
+                      <br />
+                      <br />
+                      <div layout="row">
+                        <h2 class="md-title">Works</h2><div class="btn_add"><i class="material-icons" data-ng-click="vm.add_work()">add_circle</i></div>
+                      </div>
+                      <div data-ng-repeat="work in vm.works">
+                        <div layout="row">
+                          <div class="btn_remove"><i class="material-icons" data-ng-click="vm.remove_work($index)">remove_circle</i></div>
+                          <md-input-container class="md-block" flex>
+                            <label>URL {{$index + 1}}</label>
+                            <input type="url" name="work" ng-model="work.url"> 
+                          </md-input-container>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /Creator Information -->
+
+                    <!-- Poster Infomation -->
+                    <div ng-if="'poster' == vm.user.user_type">
+                      <h2 class="md-title">Experts You need</h2>
+                      <div layout="row" layout-wrap="" style="padding-left: 10%;">
+                        <div flex="90" flex-gt-xs="40" flex-gt-sm="30" flex-gt-md="20" ng-repeat="item in vm.items">
+                          <md-checkbox ng-checked="vm.exists(item, selected)" ng-click="vm.toggle(item, selected)">
+                            {{ item }} 
+                          </md-checkbox>
+                        </div>
+                      </div>
+                      <br />
+                      <br />
+                    </div>
+                    <!-- /Poster Information -->
+
+                    <div layout="row" layout-align="center center">
+                        <md-button class="md-raised md-primary btn_save" type="submit">SAVE</md-button>
+                    </div>
+                  </form>
+                </md-content>
+              </div>
+            </md-content>
+          </md-tab>
+
+          <md-tab label="Project History">
+              <md-content class="md-padding">
+                <div ng-cloak="">
+                  <md-content layout-padding="">
+                    <div layout="column" layout-align="center center">
+                      <md-card>
+                        <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+                        <md-card-title>
+                          <md-card-title-text>
+                            <span class="md-headline">Action buttons</span>
+                          </md-card-title-text>
+                        </md-card-title>
+                        <md-card-content>
+                          <p>
+                            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                          </p>
+                          <p>
+                            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                          </p>
+                          <p>
+                            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                          </p>
+                        </md-card-content>
+                        <md-card-actions layout="row" layout-align="end center">
+                          <md-button>Action 1</md-button>
+                          <md-button>Action 2</md-button>
+                        </md-card-actions>
+                      </md-card>
+                      <md-card>
+                        <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+                        <md-card-title>
+                          <md-card-title-text>
+                            <span class="md-headline">Action buttons</span>
+                          </md-card-title-text>
+                        </md-card-title>
+                        <md-card-content>
+                          <p>
+                            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                          </p>
+                          <p>
+                            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                          </p>
+                          <p>
+                            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                          </p>
+                        </md-card-content>
+                        <md-card-actions layout="row" layout-align="end center">
+                          <md-button>Action 1</md-button>
+                          <md-button>Action 2</md-button>
+                        </md-card-actions>
+                      </md-card>
+                      <md-card>
+                        <img ng-src="static/img/beijing.jpg" class="md-card-image" alt="Washed Out">
+                        <md-card-title>
+                          <md-card-title-text>
+                            <span class="md-headline">Action buttons</span>
+                          </md-card-title-text>
+                        </md-card-title>
+                        <md-card-content>
+                          <p>
+                            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                          </p>
+                          <p>
+                            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                          </p>
+                          <p>
+                            The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+                            two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                          </p>
+                        </md-card-content>
+                        <md-card-actions layout="row" layout-align="end center">
+                          <md-button>Action 1</md-button>
+                          <md-button>Action 2</md-button>
+                        </md-card-actions>
+                      </md-card> 
+                    </div>
+                  </md-content>
+                </div>
+              </md-content>
+          </md-tab>
+
+          <md-tab label="Project History">
+              <md-content class="md-padding">
+                <div ng-cloak="">
+                  <md-content layout-padding="">
+                    <div></div>
+                  </md-content>
+                </div>
+              </md-content>
+          </md-tab>
+
+        </md-tabs>
+      </md-content>
+    </div>
+  </div>
+
+  <div ng-if="'' == vm.user.user_type">
+      <md-button class="md-raised md-primary btn_save" data-ng-click="vm.user_classification('creator')">Creator</md-button>
+      <md-button class="md-raised md-primary btn_save" data-ng-click="vm.user_classification('poster')">Poster</md-button>
+  </div>
+
+</div>
